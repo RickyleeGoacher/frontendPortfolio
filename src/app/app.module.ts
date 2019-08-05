@@ -12,6 +12,8 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { ProjectSectionComponent } from './components/project-section/project-section.component';
 import { ExperimentsSectionComponent } from './components/experiments-section/experiments-section.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
     AboutSectionComponent,
     ProjectSectionComponent,
     ExperimentsSectionComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
