@@ -7,6 +7,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { AboutSectionComponent } from './components/about-section/about-section.component';
+import { ProjectSectionComponent } from './components/project-section/project-section.component';
+import { ExperimentsSectionComponent } from './components/experiments-section/experiments-section.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { ContactComponent } from './pages/contact/contact.component';
     HomeComponent,
     PortfolioComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    HeroComponent,
+    AboutSectionComponent,
+    ProjectSectionComponent,
+    ExperimentsSectionComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
