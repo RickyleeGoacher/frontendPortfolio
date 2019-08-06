@@ -1,0 +1,46 @@
+@import '../../../assets/styles/_variables.sass'
+#contact-container
+	width: 100%
+	min-height: 100vh
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	#contact-text
+		width: 100%
+		height: 200px
+		display: flex
+		justify-content: center
+		align-items: center
+		background-image: $secondary-gradient
+		h2 
+			color: $primary-header-color
+			font-family: $main-font
+	form
+		width: 60%
+		height: 500px
+		margin-top: 5%
+		margin-bottom: 5%
+		border: solid 1px grey
+		display: flex
+		flex-direction: column
+		padding: 2rem
+		font-family: $secondary-font
+		input
+			width: 80%
+			padding: 0.5rem
+		.input-section
+			display: flex
+			flex-direction: column
+			margin-top: 2%
+			margin-bottom: 2%
+			.textarea
+				height: 200px
+				padding: 0.5rem
+		button
+			height: 80px
+			padding: 1rem
+			font-family: $secondary-font
+			background-image: $main-gradient
+			color: #f1f1f1
+			border: 0
