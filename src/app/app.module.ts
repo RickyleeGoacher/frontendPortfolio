@@ -17,6 +17,7 @@ import { ExperimentsSectionComponent } from './components/experiments-section/ex
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutImageComponent } from './components/about-image/about-image.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ExperimentsSectionComponent,
     ContactFormComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    AboutImageComponent
   ],
   imports: [
     BrowserModule,
