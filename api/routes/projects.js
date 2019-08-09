@@ -10,3 +10,20 @@ router.get('/', (req, res, next) => {
 		res.json(data);
 	})
 })
+
+// Post a project
+
+router.post('/create', (req, res, next) => {
+	if(err) {
+		res.sendStatus(403);
+	} else {
+		let post = new Projects(req.body);
+			post.save()
+				.then(post => {
+					res.status(200).json({'Project': 'Project added.'});
+				})
+				.catch(err => {
+					res.status(400).send('Unable to save to database');
+				});
+	}
+})
