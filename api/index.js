@@ -8,6 +8,11 @@ const ProjectRoutes = require('./routes/projects');
 
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin:['http://localhost:4200'],
+  credentials:true,
+}));
+
 app.use('/api/projects', ProjectRoutes);
 
 const PORT = process.env.PORT || 3000;
