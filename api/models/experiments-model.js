@@ -30,4 +30,4 @@ const ExperimentsSchema = new Schema({
 	}
 });
 
-module.exports = mongoose.model('Experiment', ExperimentSchema);
+module.exports = mongoose.model('Experiment', ExperimentsSchema);
