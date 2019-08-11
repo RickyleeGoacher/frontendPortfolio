@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ExperimentsService } from '../../services/experiments.service';
+import { Experiment } from '../../models/experiment.model';
 
 @Component({
   selector: 'app-experiments-section',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperimentsSectionComponent implements OnInit {
 
-  constructor() { }
+  @Input() experiments: Experiment[];
+
+  constructor(private experimentService: ExperimentsService) { }
 
   ngOnInit() {
+  	this.fetchExperiments();
+  }
+
+  fetchExperiments() {
+  	this.experimentService.getExperiments().subscribe((data: Experiment[]) => {
+  		this.experiments = data;
+  		console.log(this.experiments);
+  	});	
   }
 
 }
