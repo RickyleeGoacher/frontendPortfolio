@@ -19,6 +19,11 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutImageComponent } from './components/about-image/about-image.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LoginComponent } from './admin/login/login.component';
+import { CreateProjectComponent } from './admin/create-project/create-project.component';
+import { CreateExperimentComponent } from './admin/create-experiment/create-experiment.component';
+import { CreateAboutComponent } from './admin/create-about/create-about.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { AboutImageComponent } from './components/about-image/about-image.compon
     ContactFormComponent,
     NavigationComponent,
     FooterComponent,
-    AboutImageComponent
+    AboutImageComponent,
+    DashboardComponent,
+    LoginComponent,
+    CreateProjectComponent,
+    CreateExperimentComponent,
+    CreateAboutComponent
   ],
   imports: [
     BrowserModule,
