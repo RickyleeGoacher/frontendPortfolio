@@ -24,6 +24,7 @@ import { LoginComponent } from './admin/login/login.component';
 import { CreateProjectComponent } from './admin/create-project/create-project.component';
 import { CreateExperimentComponent } from './admin/create-experiment/create-experiment.component';
 import { CreateAboutComponent } from './admin/create-about/create-about.component';
+import { RegisterComponent } from './admin/register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CreateAboutComponent } from './admin/create-about/create-about.componen
     LoginComponent,
     CreateProjectComponent,
     CreateExperimentComponent,
-    CreateAboutComponent
+    CreateAboutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
