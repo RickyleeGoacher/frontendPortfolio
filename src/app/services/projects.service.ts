@@ -37,4 +37,8 @@ export class ProjectsService {
       });
     }
 
+    deleteProject(id) {
+      return this.httpClient.get(`${this.apiURL}/projects/delete/${id}`);
+    }
+
 }

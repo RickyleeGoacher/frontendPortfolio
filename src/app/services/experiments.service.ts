@@ -37,4 +37,8 @@ export class ExperimentsService {
       });
     }
 
+    deleteExperiment(id) {
+      return this.httpClient.get(`${this.apiURL}/experiments/delete/${id}`);
+    }
+
 }
