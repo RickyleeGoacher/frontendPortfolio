@@ -1,3 +1,29 @@
-<p>
-  create-project works!
-</p>
+<section class="form-container">
+	<form [formGroup]="editorForm" (ngSubmit)="onSubmit()" novalidate>
+		<div id="form-header">
+			<h2> Create project </h2>
+		</div>
+
+		<div class="form-group">  
+			<label for="title">Title</label>
+			<input type="text" name="title" placeholder="Enter Title..." formControlName="title"/>
+		</div>
+
+		<div class="form-group">  
+			<label for="description">Description</label>
+			<input type="text" name="description" minlength="0" maxlength="250" placeholder="Enter description..." formControlName="description"/>
+		</div>
+
+		<div class="form-group">  
+			<label for="url">URL</label>
+			<input type="text" name="url" placeholder="Enter URL..." formControlName="url"/>
+		</div>
+
+		<div class="form-group">  
+			<label for="icon">Icon</label>
+			<input type="text" name="icon" placeholder="Enter icon..." formControlName="icon"/>
+		</div>			
+
+		<button type="submit">Submit</button>
+	</form>
+</section>
