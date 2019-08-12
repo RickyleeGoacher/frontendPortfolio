@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService:UserService, private router:Router) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.userService.logout()
+  	    .subscribe(
+  		    data => {
+            	sessionStorage.removeItem('token');
+            	sessionStorage.removeItem('expire');
+            	this.router.navigate(['/login']);
+          	},
+  		    error => {
+            	console.error(error);
+          	}
+  		)
   }
 
 }
