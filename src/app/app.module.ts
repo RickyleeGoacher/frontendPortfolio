@@ -27,6 +27,7 @@ import { CreateAboutComponent } from './admin/create-about/create-about.componen
 import { RegisterComponent } from './admin/register/register.component';
 
 import { ProjectsService } from './services/projects.service';
+import { ExperimentsService } from './services/experiments.service';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
@@ -60,7 +61,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ReactiveFormsModule,
     FormsModule
   ],
-    providers: [ProjectsService, UserService, AuthGuard, 
+    providers: [ProjectsService, ExperimentsService, UserService, AuthGuard, 
   {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
