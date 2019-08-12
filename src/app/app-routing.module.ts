@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from  './auth.guard';
+
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -18,7 +20,7 @@ const routes: Routes = [
 	{ path: 'portfolio', component: PortfolioComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
-	{ path: 'dashboard', component: DashboardComponent },
+	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'create-about', component: CreateAboutComponent },
 	{ path: 'create-experiment', component: CreateExperimentComponent },
 	{ path: 'create-project', component: CreateProjectComponent }
