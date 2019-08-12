@@ -32,4 +32,20 @@ router.route('/create').post(ensureAutenticated, (req, res, next) => {
 	});
 })
 
+router.get('/delete/:id', ensureAutenticated, (req, res, next) => {
+    jwt.verify(req.token, process.env.SECRET, (err) => {
+        if(err) {
+            res.sendStatus(403);
+        } else {
+            Projects.findByIdAndRemove(req.params.id, (err, data) => {
+                if(!err) {
+                    res.json('Sucessfully deleted');
+                } else {
+                    console.log('error');
+                }
+            })
+        }
+    });
+})
+
 module.exports = router;
