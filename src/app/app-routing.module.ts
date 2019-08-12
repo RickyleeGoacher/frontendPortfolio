@@ -21,9 +21,9 @@ const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
 	{ path: 'register', component: RegisterComponent },
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-	{ path: 'create-about', component: CreateAboutComponent },
-	{ path: 'create-experiment', component: CreateExperimentComponent },
-	{ path: 'create-project', component: CreateProjectComponent }
+	{ path: 'create-about', component: CreateAboutComponent, canActivate: [AuthGuard] },
+	{ path: 'create-experiment', component: CreateExperimentComponent, canActivate: [AuthGuard] },
+	{ path: 'create-project', component: CreateProjectComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
