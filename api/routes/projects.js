@@ -2,6 +2,8 @@ const Projects = require('../models/project-model');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const jwt = require('jsonWebtoken');
+const { ensureAutenticated } = require('../config/auth');
 
 // Get projects
 
