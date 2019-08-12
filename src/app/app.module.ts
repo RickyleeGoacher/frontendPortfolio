@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,11 @@ import { CreateProjectComponent } from './admin/create-project/create-project.co
 import { CreateExperimentComponent } from './admin/create-experiment/create-experiment.component';
 import { CreateAboutComponent } from './admin/create-about/create-about.component';
 import { RegisterComponent } from './admin/register/register.component';
+
+import { ProjectsService } from './services/projects.service';
+import { UserService } from './services/user.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,15 @@ import { RegisterComponent } from './admin/register/register.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+    providers: [ProjectsService, UserService, AuthGuard, 
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
