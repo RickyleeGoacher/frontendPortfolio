@@ -2,18 +2,18 @@
 	<div id="contact-text">
 		<h2>Contact</h2>
 	</div>
-	<form>
+	<form [formGroup]="editorForm" (ngSubmit)="onSubmit()" novalidate>
 		<div class="input-section">
     		<label for="name">Name:</label>
-    		<input type="text" name="name" class="input" placeholder="Your Name...">
+    		<input type="text" name="name" class="input" placeholder="Your Name..." formControlName="name">
   		</div>
   		<div class="input-section">
     		<label for="email">Email:</label>
-    		<input type="email" name="email" class="input" placeholder="Your Email...">
+    		<input type="email" name="email" class="input" placeholder="Your Email..." formControlName="email">
   		</div>
   		<div class="input-section">
     		<label for="message">Message:</label>
-    		<textarea class="textarea" name="message" placeholder="Compose your message..."></textarea>
+    		<textarea class="textarea" name="message" placeholder="Compose your message..." formControlName="message"></textarea>
   		</div>
   		<button type="submit">Submit</button>
 	</form>
