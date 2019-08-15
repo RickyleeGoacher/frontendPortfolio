@@ -31,6 +31,7 @@ import { ExperimentsService } from './services/experiments.service';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AboutIconsComponent } from './components/about-icons/about-icons.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     CreateProjectComponent,
     CreateExperimentComponent,
     CreateAboutComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutIconsComponent
   ],
   imports: [
     BrowserModule,
