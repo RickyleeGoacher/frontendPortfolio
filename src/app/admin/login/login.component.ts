@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         			sessionStorage.setItem('token', res.token)
         			const decoded = jwt_decode(res.token)
         			sessionStorage.setItem('expire', decoded.exp)
-       				this.router.navigate(['/'])
+       				this.router.navigate(['/dashboard'])
         		} else {
           			this.errorMessage = res.message;
         		}
