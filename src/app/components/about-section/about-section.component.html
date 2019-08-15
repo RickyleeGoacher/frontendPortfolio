@@ -1,7 +1,7 @@
 <section id="about-container">
-	<div id="about-text">
+	<div id="about-text" *ngFor="let about of about">
 		<h2>About me</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean blandit venenatis ipsum, sit amet gravida felis ultricies pellentesque. Integer odio nisl, placerat quis tempus ac, ultrices et nulla.</p>
+		<p>{{ about.text }}</p>
 	</div>
 	<app-about-icons></app-about-icons>
 </section>
