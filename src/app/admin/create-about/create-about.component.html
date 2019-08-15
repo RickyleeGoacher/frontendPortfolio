@@ -1,3 +1,18 @@
-<p>
-  create-about works!
-</p>
+<section class="form-container">
+	<form [formGroup]="editorForm" (ngSubmit)="onSubmit()" novalidate>
+		<div id="form-header">
+			<h2> Create about </h2>
+		</div>
+		<div class="form-group" style="display: none;">  
+			<label for="id">ID</label>
+			<input type="text" name="id" formControlName="id"/>
+		</div>
+
+		<div class="form-group">  
+			<label for="text">About text</label>
+			<textarea type="text" name="text" placeholder="Enter about..." formControlName="text"></textarea>
+		</div>
+			
+		<button type="submit">Submit</button>
+	</form>
+</section>
