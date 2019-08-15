@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const ProjectRoutes = require('./routes/projects');
 const ExperimentRoutes = require('./routes/experiments');
 const UserRoute = require('./routes/users');
+const ContactRoute = require('./routes/contact');
 const passport = require('passport');
 
 app.use(bodyParser.json());
@@ -24,6 +25,7 @@ require('./config/passport')(passport);
 app.use('/api/projects', ProjectRoutes);
 app.use('/api/experiments', ExperimentRoutes);
 app.use('/api/users', UserRoute);
+app.use('/api/contact', ContactRoute);
 
 const PORT = process.env.PORT || 3000;
 
