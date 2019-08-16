@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AboutTextService } from '../../services/about-text.service';
+import { AboutText } from '../../models/about-text.model';
 
 @Component({
   selector: 'app-about-section',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutSectionComponent implements OnInit {
 
-  constructor() { }
+	@Input() about: AboutText[];
+
+  constructor(private aboutTextService: AboutTextService) { }
 
   ngOnInit() {
+  	this.fetchAboutText();
+  }
+
+    fetchAboutText() {
+  	this.aboutTextService.getAbout().subscribe((data: AboutText[]) => {
+  		this.about = data;
+  		console.log(this.about);
+  	});	
   }
 
 }
