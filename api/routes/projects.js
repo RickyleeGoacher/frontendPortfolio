@@ -30,7 +30,57 @@ router.route('/create').post(ensureAutenticated, (req, res, next) => {
 					});
 		}
 	});
-})
+});
+
+// Get project by id
+
+router.route('/update/:id').get(ensureAutenticated, (req, res, next) => {
+    jwt.verify(req.token, process.env.SECRET, (err) => {
+        if(err) {
+          res.sendStatus(403);
+        } else {
+            Projects.findById(req.params.id, (err, project) => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                res.json(project);
+                }
+            });
+        }
+    });
+});
+
+// Update by id
+
+router.route('/update/:id').post(ensureAutenticated, (req, res, next) => {
+        jwt.verify(req.token, process.env.SECRET, (err) => {
+        if(err) {
+          res.sendStatus(403);
+        } else {
+            Projects.findById(req.params.id, (err, project) => {
+                if (!project)
+                    return next(new Error('Could not load document'));
+                else {
+                    project.title = req.body.title;
+                    project.description = req.body.description;
+                    project.url = req.body.url;
+                    project.icon = req.body.icon;
+                    project.liveUrl = req.body.liveUrl;
+                    project.icon2 = req.body.icon2
+
+                    project.save().then(project => {
+                        res.json('Update done');
+                    }).catch(err => {
+                        res.status(400).send('Update failed');
+                    });
+                }
+            });
+        }
+    });
+});
+
+// Delete project by id
 
 router.get('/delete/:id', ensureAutenticated, (req, res, next) => {
     jwt.verify(req.token, process.env.SECRET, (err) => {
