@@ -15,7 +15,9 @@ export class CreateProjectComponent implements OnInit {
       		title: ['', Validators.required ],
       		description: ['', Validators.required ],
       		content: '',
-      		url: ['', Validators.required ]
+      		url: ['', Validators.required ],
+          liveUrl: [''],
+          icon2: ['']          
     	});  	
   }
 
@@ -24,13 +26,17 @@ export class CreateProjectComponent implements OnInit {
   	urlContent: string = null;
   	descriptionContent: string = null;
   	iconContent: string = null;
+    liveUrlContent: string = null;
+    icon2Content: string = null;
 
   ngOnInit() {
   	this.editorForm = new FormGroup({
   		'description': new FormControl(null),
   		'title': new FormControl(null),
   		'url': new FormControl(null),
-  		'icon': new FormControl(null)
+  		'icon': new FormControl(null),
+      'icon2': new FormControl(null),
+      'liveUrl': new FormControl(null)     
   	})
   }
 
@@ -39,7 +45,9 @@ export class CreateProjectComponent implements OnInit {
   		this.urlContent = this.editorForm.get('url').value,
   		this.descriptionContent = this.editorForm.get('description').value,
   		this.iconContent = this.editorForm.get('icon').value,
-  		this.projectService.addProject(this.titleContent, this.descriptionContent, this.urlContent, this.iconContent)
+      this.icon2Content = this.editorForm.get('icon2').value,
+      this.liveUrlContent = this.editorForm.get('liveUrl').value
+  		this.projectService.addProject(this.titleContent, this.descriptionContent, this.urlContent, this.iconContent, this.liveUrlContent, this.icon2Content)
     }
 
 }
