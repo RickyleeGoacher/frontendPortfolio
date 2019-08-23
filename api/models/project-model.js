@@ -27,6 +27,12 @@ const ProjectSchema = new Schema({
 	icon: {
 		type: String,
 		required: true
+	},
+	liveUrl: {
+		type: String
+	},
+	icon2: {
+		types: String
 	}
 });
 
