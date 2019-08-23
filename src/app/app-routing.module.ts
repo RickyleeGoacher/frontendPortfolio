@@ -12,6 +12,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { CreateAboutComponent } from './admin/create-about/create-about.component';
 import { CreateExperimentComponent } from './admin/create-experiment/create-experiment.component';
 import { CreateProjectComponent } from './admin/create-project/create-project.component';
+import { EditThumbnailComponent } from './admin/edit-thumbnail/edit-thumbnail.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
 	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: 'create-about', component: CreateAboutComponent, canActivate: [AuthGuard] },
 	{ path: 'create-experiment', component: CreateExperimentComponent, canActivate: [AuthGuard] },
-	{ path: 'create-project', component: CreateProjectComponent, canActivate: [AuthGuard] }
+	{ path: 'create-project', component: CreateProjectComponent, canActivate: [AuthGuard] },
+	{ path: 'project/edit/:id', component: EditThumbnailComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
@@ -42,5 +44,6 @@ export const routingComponents = [
 	DashboardComponent,
 	CreateAboutComponent,
 	CreateExperimentComponent,
-	CreateProjectComponent
+	CreateProjectComponent,
+	EditThumbnailComponent
 ];
