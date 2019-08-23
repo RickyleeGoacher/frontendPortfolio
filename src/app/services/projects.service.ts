@@ -17,7 +17,7 @@ export class ProjectsService {
 		return this.httpClient.get<Project[]>(`${this.apiURL}/projects`);
 	}
 
-    addProject(title, description, url, icon) {
+    addProject(title, description, url, icon, liveUrl, icon2) {
       let headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
@@ -28,13 +28,39 @@ export class ProjectsService {
         title: title,
         description: description,
         url: url,
-        icon: icon
+        icon: icon,
+        liveUrl: liveUrl,
+        icon2: icon2
       };
       return this.httpClient.post(`${this.apiURL}/projects/create`, project, options)
       .subscribe(data => {
         console.log(data);
         this.router.navigate(['/']);
       });
+    }
+
+    getProjectById(id):Observable<Project[]> {
+      return this.httpClient.get<Project[]>(`${this.apiURL}/projects/update/${id}`);
+    }
+
+    updateProject(id, title, description, url, icon, liveUrl, icon2) {
+        let headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+        let options = {
+          headers: headers
+        }
+        const project = {
+          title: title,
+          description: description,
+          url: url,
+          icon: icon,
+          liveUrl: liveUrl,
+          icon2: icon2
+        };
+        return this.httpClient.post(`${this.apiURL}/projects/update/${id}`, project, options).subscribe(data => {
+        this.router.navigate(['/']);
+        });    
     }
 
     deleteProject(id) {
