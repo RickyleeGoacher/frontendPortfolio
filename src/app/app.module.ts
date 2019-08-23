@@ -32,6 +32,7 @@ import { UserService } from './services/user.service';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AboutIconsComponent } from './components/about-icons/about-icons.component';
+import { EditThumbnailComponent } from './admin/edit-thumbnail/edit-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AboutIconsComponent } from './components/about-icons/about-icons.compon
     CreateExperimentComponent,
     CreateAboutComponent,
     RegisterComponent,
-    AboutIconsComponent
+    AboutIconsComponent,
+    EditThumbnailComponent
   ],
   imports: [
     BrowserModule,
