@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { PortfolioComponent } from './portfolio.component';
+import { ProjectSectionComponent } from '../../components/project-section/project-section.component';
+import { ExperimentsSectionComponent } from '../../components/experiments-section/experiments-section.component';
 
 describe('PortfolioComponent', () => {
   let component: PortfolioComponent;
@@ -8,7 +12,8 @@ describe('PortfolioComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PortfolioComponent ]
+      imports: [ HttpClientModule, RouterTestingModule ],      
+      declarations: [ PortfolioComponent, ProjectSectionComponent, ExperimentsSectionComponent ]
     })
     .compileComponents();
   }));
