@@ -10,6 +10,7 @@ const UserRoute = require('./routes/users');
 const ContactRoute = require('./routes/contact');
 const AboutTextRoute = require('./routes/about-text');
 const passport = require('passport');
+const path = require('path');
 const helmet = require('helmet');
 
 app.use(helmet());
@@ -19,6 +20,8 @@ app.use(cors({
   origin:['http://localhost:4200'],
   credentials:true,
 }));
+
+app.use(express.static(path.join(__dirname, './dist/')));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -30,6 +33,10 @@ app.use('/api/experiments', ExperimentRoutes);
 app.use('/api/users', UserRoute);
 app.use('/api/contact', ContactRoute);
 app.use('/api/about-text', AboutTextRoute);
+
+app.use(function(req, res) {
+    res.sendFile(path.join(__dirname, '/dist', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 
