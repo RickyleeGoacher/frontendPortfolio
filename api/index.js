@@ -10,7 +10,9 @@ const UserRoute = require('./routes/users');
 const ContactRoute = require('./routes/contact');
 const AboutTextRoute = require('./routes/about-text');
 const passport = require('passport');
+const helmet = require('helmet');
 
+app.use(helmet());
 app.use(bodyParser.json());
 
 app.use(cors({
