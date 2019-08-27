@@ -27,10 +27,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'webDevPortfolio'`, () => {
+  it(`should have as title 'Frontend Webdeveloper Portfolio'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('webDevPortfolio');
+    expect(app.title).toEqual('Frontend Webdeveloper Portfolio');
   });
 
 });
