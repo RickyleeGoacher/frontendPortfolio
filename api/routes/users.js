@@ -4,7 +4,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt'); // Encription
 const passport = require('passport');
-const jwt = require('jsonWebtoken');
+const jwt = require('jsonwebtoken');
 const { ensureAutenticated } = require('../config/auth');
 
 router.post('/register', (req, res, next) => {

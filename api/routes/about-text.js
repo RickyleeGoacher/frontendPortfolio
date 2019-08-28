@@ -2,7 +2,7 @@ const AboutText = require('../models/about-text-model');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const jwt = require('jsonWebtoken');
+const jwt = require('jsonwebtoken');
 const { ensureAutenticated } = require('../config/auth');
 
 // Get about

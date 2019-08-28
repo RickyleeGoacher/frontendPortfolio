@@ -2,7 +2,7 @@ const Experiments = require('../models/experiments-model');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const jwt = require('jsonWebtoken');
+const jwt = require('jsonwebtoken');
 const { ensureAutenticated } = require('../config/auth');
 
 // Get Experiments
