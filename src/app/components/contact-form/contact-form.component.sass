@@ -44,3 +44,29 @@
 			background-image: $main-gradient
 			color: #f1f1f1
 			border: 0
+@media (max-width: 1024px) and (orientation: portrait)
+	#contact-container
+		form
+			width: 80%
+			height: 100%
+			box-sizing: border-box
+			padding: 2rem
+			.input-section
+				margin-top: 2%
+				margin-bottom: 2%
+				input
+					border: solid 1px grey
+				label
+					margin-bottom: 0.5rem
+				textarea
+					border: solid 1px grey
+@media (max-width: 732px) and (orientation: landscape)
+	#contact-container
+		form
+			width: 80%					
+@media (max-width: 415px) and (orientation: portrait)
+	#contact-container
+		form
+			width: 90%
+			button
+				height: 50px
