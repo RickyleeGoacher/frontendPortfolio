@@ -26,9 +26,5 @@ export class ContactService {
         	message: message
       	};
       	return this.httpClient.post(`${this.env.apiUrl}/contact/send`, messageContent, options)
-      	.subscribe(data => {
-        	console.log(data);
-        	this.router.navigate(['/']);
-      	});
     }
 }

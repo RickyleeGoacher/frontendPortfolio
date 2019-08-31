@@ -15,6 +15,7 @@
     		<label for="message">Message:</label>
     		<textarea class="textarea" name="message" placeholder="Compose your message..." formControlName="message"></textarea>
   		</div>
+      <p *ngFor="let message of success">{{ message.Message }}</p>
   		<button type="submit">Submit</button>
 	</form>
 </section>
