@@ -36,18 +36,20 @@ const mail = {
 }
 
 transporter.sendMail(mail, function(err, info) {
+    let msg = [];
     if (err) {
         console.log(err);
     } else {
         console.log(req.body);
         console.log(data);
+        msg.push({'Message': 'Message sent!'});
         console.log('info.messageId: ' + info.messageId);
         console.log('info.envelope: ' + info.envelope);
         console.log('info.accepted: ' + info.accepted);
         console.log('info.rejected: ' + info.rejected);
         console.log('info.pending: ' + info.pending);
         console.log('info.response: ' + info.response);
-        return res.status(200).json({'Message': 'Message sent!'});
+        return res.status(200).json(msg);
     }
     transporter.close();
 });
