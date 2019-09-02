@@ -8,9 +8,26 @@ const { ensureAutenticated } = require('../config/auth');
 // Get projects
 
 router.get('/', (req, res, next) => {
-	Projects.find((err, data) => {
-		res.json(data);
-	})
+    let pageNo = parseInt(req.query.pageNo)
+    let size = parseInt(req.query.size)
+    let query = {}
+    if(pageNo < 0 || pageNo === 0) {
+        response = {'error': true, 'message': 'invalid page number, should start with 1'}
+        return res.json(response)
+    }
+    query.skip = size * (pageNo - 1)
+    query.limit = size
+    Projects.countDocuments({}, (err, totalCount) => {                
+	    Projects.find({},{}, query, (err, data) => {
+            if(err) {
+                response = {'error': true, 'message': 'error fetching data'}
+            } else {
+                let totalPages = Math.ceil(totalCount / size)
+                response = data;
+            }
+            res.json(response)
+	    })
+    })    
 })
 
 // Post a project
