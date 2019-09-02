@@ -4,4 +4,6 @@ export class Experiment {
 	description: string;
 	url: string;
 	icon: string;
+	liveUrl: string;
+	icon2: string;	
 }
