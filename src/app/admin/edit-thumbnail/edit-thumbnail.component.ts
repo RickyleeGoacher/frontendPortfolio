@@ -67,14 +67,14 @@ export class EditThumbnailComponent implements OnInit {
   	}
 
     onSubmit() {
-        this.titleContent = this.editorForm.get('title').value
-        this.descriptionContent = this.editorForm.get('description').value
-        this.urlContent = this.editorForm.get('url').value
-        this.liveUrlContent = this.editorForm.get('liveUrl').value
-        this.iconContent = this.editorForm.get('icon').value
-        this.icon2Content = this.editorForm.get('icon2').value
         this.idContent = this.editorForm.get('id').value
-        this.projectService.updateProject(this.idContent, this.titleContent, this.descriptionContent, this.urlContent, this.liveUrlContent, this.iconContent, this.icon2Content)
+        this.titleContent = this.editorForm.get('title').value,
+        this.urlContent = this.editorForm.get('url').value,
+        this.descriptionContent = this.editorForm.get('description').value,
+        this.iconContent = this.editorForm.get('icon').value,
+        this.icon2Content = this.editorForm.get('icon2').value,
+        this.liveUrlContent = this.editorForm.get('liveUrl').value
+        this.projectService.updateProject(this.idContent, this.titleContent, this.descriptionContent, this.urlContent, this.iconContent, this.liveUrlContent, this.icon2Content)    
     }
 
 }
