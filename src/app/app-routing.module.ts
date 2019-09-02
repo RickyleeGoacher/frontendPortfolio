@@ -25,7 +25,8 @@ const routes: Routes = [
 	{ path: 'create-about', component: CreateAboutComponent, canActivate: [AuthGuard] },
 	{ path: 'create-experiment', component: CreateExperimentComponent, canActivate: [AuthGuard] },
 	{ path: 'create-project', component: CreateProjectComponent, canActivate: [AuthGuard] },
-	{ path: 'project/edit/:id', component: EditThumbnailComponent, canActivate: [AuthGuard] }
+	{ path: 'project/edit/:id', component: EditThumbnailComponent, canActivate: [AuthGuard] },
+	{ path: 'experiment/edit/:id', component: CreateExperimentComponent, canActivate: [AuthGuard] }	
 ];
 
 @NgModule({
