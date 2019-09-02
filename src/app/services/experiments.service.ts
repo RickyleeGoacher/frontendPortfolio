@@ -18,7 +18,7 @@ export class ExperimentsService {
 		return this.httpClient.get<Experiment[]>(`${this.env.apiUrl}/experiments`);
 	}
 
-    addExperiment(title, description, url, icon) {
+    addExperiment(title, description, url, icon, liveUrl, icon2) {
       let headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
@@ -29,7 +29,9 @@ export class ExperimentsService {
         title: title,
         description: description,
         url: url,
-        icon: icon
+        icon: icon,
+        liveUrl: liveUrl,
+        icon2: icon2        
       };
       return this.httpClient.post(`${this.env.apiUrl}/experiments/create`, experiment, options)
       .subscribe(data => {
@@ -37,6 +39,30 @@ export class ExperimentsService {
         this.router.navigate(['/']);
       });
     }
+
+    getExperimentById(id):Observable<Experiment[]> {
+      return this.httpClient.get<Experiment[]>(`${this.env.apiUrl}/experiments/update/${id}`);
+    }
+
+    updateExperiment(id, title, description, url, icon, liveUrl, icon2) {
+        let headers = new HttpHeaders({
+          'Content-Type': 'application/json'
+        });
+        let options = {
+          headers: headers
+        }
+        const experiment = {
+          title: title,
+          description: description,
+          url: url,
+          icon: icon,
+          liveUrl: liveUrl,
+          icon2: icon2
+        };
+        return this.httpClient.post(`${this.env.apiUrl}/experiments/update/${id}`, experiment, options).subscribe(data => {
+        this.router.navigate(['/']);
+        });    
+    }    
 
     deleteExperiment(id) {
       return this.httpClient.get(`${this.env.apiUrl}/experiments/delete/${id}`);
