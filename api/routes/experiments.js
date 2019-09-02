@@ -32,6 +32,54 @@ router.route('/create').post(ensureAutenticated, (req, res, next) => {
 	});
 })
 
+// Get experiment by id
+
+router.route('/update/:id').get(ensureAutenticated, (req, res, next) => {
+    jwt.verify(req.token, process.env.SECRET, (err) => {
+        if(err) {
+          res.sendStatus(403);
+        } else {
+            Experiments.findById(req.params.id, (err, data) => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                res.json(data);
+                }
+            });
+        }
+    });
+});
+
+// Update by id
+
+router.route('/update/:id').post(ensureAutenticated, (req, res, next) => {
+        jwt.verify(req.token, process.env.SECRET, (err) => {
+        if(err) {
+          res.sendStatus(403);
+        } else {
+            Experiments.findById(req.params.id, (err, data) => {
+                if (!data)
+                    return next(new Error('Could not load document'));
+                else {
+                    data.title = req.body.title;
+                    data.description = req.body.description;
+                    data.url = req.body.url;
+                    data.icon = req.body.icon;
+                    data.liveUrl = req.body.liveUrl;
+                    data.icon2 = req.body.icon2
+
+                    data.save().then(data => {
+                        res.json('Update done');
+                    }).catch(err => {
+                        res.status(400).send('Update failed');
+                    });
+                }
+            });
+        }
+    });
+});
+
 router.get('/delete/:id', ensureAutenticated, (req, res, next) => {
     jwt.verify(req.token, process.env.SECRET, (err) => {
         if(err) {
