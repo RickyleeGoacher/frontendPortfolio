@@ -13,6 +13,7 @@
 					<p>{{ experiment.description }}</p>
 					<a href="{{ experiment.url }}"><i class="{{ experiment.icon }}"></i></a>
 					<a *ngIf="userService.loggedIn" (click)="deleteExperiment(experiment._id)"><i class="far fa-times-circle"></i></a>
+					<a *ngIf="userService.loggedIn" href="experiment/edit/{{experiment._id}}"> <i class="far fa-edit"></i> </a>
 				</div>
 			</div>
 		</div>
