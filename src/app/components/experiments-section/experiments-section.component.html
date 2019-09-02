@@ -11,7 +11,7 @@
 				<div class="thumbnail-text">
 					<h3>{{ experiment.title }}</h3>
 					<p>{{ experiment.description }}</p>
-					<a href="https://github.com"><i class="fab fa-github"></i></a>
+					<a href="{{ experiment.url }}"><i class="{{ experiment.icon }}"></i></a>
 					<a *ngIf="userService.loggedIn" (click)="deleteExperiment(experiment._id)"><i class="far fa-times-circle"></i></a>
 				</div>
 			</div>
