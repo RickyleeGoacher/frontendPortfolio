@@ -32,7 +32,7 @@ const ProjectSchema = new Schema({
 		type: String
 	},
 	icon2: {
-		types: String
+		type: String
 	}
 });
 
