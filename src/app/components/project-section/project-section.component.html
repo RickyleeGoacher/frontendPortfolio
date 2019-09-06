@@ -12,6 +12,7 @@
 					<h3>{{ project.title }}</h3>
 					<p>{{ project.description }}</p>
 					<a href="{{ project.url }}"><i class="{{ project.icon }}"></i></a>
+					<a *ngIf="project.liveUrl" href="{{ project.liveUrl }}"><i class="{{ project.icon2 }}"></i></a>
 					<a *ngIf="userService.loggedIn" (click)="deleteProject(project._id)"><i class="far fa-times-circle"></i></a>
 					<a *ngIf="userService.loggedIn" href="project/edit/{{project._id}}"> <i class="far fa-edit"></i> </a>
 				</div>
