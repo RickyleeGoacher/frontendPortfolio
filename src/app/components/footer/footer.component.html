@@ -1,6 +1,7 @@
 <footer>
 	<ul>
 		<li id="left"><p>&copy; Ricky Goacher</p></li>
-		<li id="right" *ngIf="userService.loggedIn"><p><a (click)='logout()'>Logout</a></p></li>
+		<li class="right" *ngIf="userService.loggedIn"><p><a (click)='logout()'>Logout</a></p></li>
+		<li class="right" *ngIf="userService.loggedIn"><p><a routerLink="/dashboard">Dashboard</a></p></li>
 	</ul>
 </footer>
