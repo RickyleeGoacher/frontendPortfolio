@@ -14,7 +14,7 @@ export class CreateProjectComponent implements OnInit {
  		this.editorForm = this.fb.group({
       		title: ['', Validators.required ],
       		description: ['', Validators.required ],
-      		content: '',
+      		icon: ['', Validators.required ],
       		url: ['', Validators.required ],
           liveUrl: [''],
           icon2: ['']          
